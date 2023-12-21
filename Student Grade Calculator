@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class internship1 {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of Grades: ");
+        int numGrades = scanner.nextInt();
+
+        int[] grades = new int[numGrades];
+
+        for(int i = 0; i < numGrades; i++) {
+            System.out.print("Enter the Grades: " + (i + 1) + ": ");
+            grades[i] = scanner.nextInt();
+
+        }
+
+        scanner.close();
+
+        int total = 0;
+        for(int i = 0; i < numGrades; i++) {
+            total += grades[i];
+        }
+        
+
+        double average = (double) total / numGrades;
+        System.out.println("Total Marks : " + total);
+
+        System.out.println("Percentage is : " + average);
+        if(average>90){
+            System.out.println("A Grade");
+        }
+        else if(average>75){
+            System.out.println("Grade B");
+        }
+        else if(average>45){
+            System.out.println("Grade C");
+        }
+        else {
+            System.out.println("FAIL");
+        }
+    }
+}
